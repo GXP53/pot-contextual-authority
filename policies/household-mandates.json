@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "0.1.0",
+  "mandateId": "household-entertainment-v1",
+  "status": "active",
+  "issuedBy": "household-owner",
+  "subject": {
+    "role": "verified-household-adult"
+  },
+  "action": {
+    "type": "rent-digital-content",
+    "currency": "CAD",
+    "maximumAmount": 15
+  },
+  "contexts": [
+    {
+      "contextId": "established-household",
+      "recognizedDevices": [
+        "living-room-fire-tv-cube",
+        "bedroom-fire-tv-stick"
+      ],
+      "decision": "ALLOW",
+      "requiresHumanApproval": false
+    },
+    {
+      "contextId": "roaming",
+      "recognizedDevices": [
+        "travel-fire-tv-stick"
+      ],
+      "decision": "DEFERRED",
+      "requiresHumanApproval": true,
+      "authorizedApprovalChannels": [
+        "owner-phone",
+        "owner-tablet",
+        "owner-laptop"
+      ]
+    }
+  ],
+  "hardLimits": {
+    "amountAboveMaximum": "BLOCK",
+    "unknownDevice": "BLOCK",
+    "expiredMandate": "BLOCK"
+  },
+  "approvalBinding": {
+    "requiredFields": [
+      "requestId",
+      "actorId",
+      "deviceId",
+      "action",
+      "contentId",
+      "amount",
+      "currency",
+      "expiresAt"
+    ],
+    "singleUse": true,
+    "rejectModifiedRequest": true,
+    "rejectReplay": true
+  }
+}
