@@ -1,0 +1,46 @@
+[
+  {
+    "requestId": "request-home-001",
+    "actorId": "verified-household-adult",
+    "deviceId": "living-room-fire-tv-cube",
+    "action": "rent-digital-content",
+    "contentId": "movie-001",
+    "amount": 9.99,
+    "currency": "CAD",
+    "contextId": "established-household",
+    "expectedDecision": "ALLOW"
+  },
+  {
+    "requestId": "request-roaming-001",
+    "actorId": "verified-household-adult",
+    "deviceId": "travel-fire-tv-stick",
+    "action": "rent-digital-content",
+    "contentId": "movie-002",
+    "amount": 9.99,
+    "currency": "CAD",
+    "contextId": "roaming",
+    "expectedDecision": "DEFERRED"
+  },
+  {
+    "requestId": "request-limit-001",
+    "actorId": "verified-household-adult",
+    "deviceId": "living-room-fire-tv-cube",
+    "action": "rent-digital-content",
+    "contentId": "movie-003",
+    "amount": 19.99,
+    "currency": "CAD",
+    "contextId": "established-household",
+    "expectedDecision": "BLOCK"
+  },
+  {
+    "requestId": "request-device-001",
+    "actorId": "verified-household-adult",
+    "deviceId": "unknown-fire-tv-device",
+    "action": "rent-digital-content",
+    "contentId": "movie-004",
+    "amount": 9.99,
+    "currency": "CAD",
+    "contextId": "established-household",
+    "expectedDecision": "BLOCK"
+  }
+]
