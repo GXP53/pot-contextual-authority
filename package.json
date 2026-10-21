@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node src/evaluate.mjs && node tests/receipt-tamper.mjs",
+    "test": "node src/evaluate.mjs && node tests/receipt-tamper.mjs && node tests/approval-flow.mjs",
     "demo": "node src/evaluate.mjs"
   },
   "engines": {
