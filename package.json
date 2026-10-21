@@ -1,0 +1,13 @@
+{
+  "name": "pot-contextual-authority",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node src/evaluate.mjs",
+    "demo": "node src/evaluate.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
