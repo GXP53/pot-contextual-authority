@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Proof of Trust contextual authorization demonstration."
+  >
+  <title>Proof of Trust | Contextual Authority</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">PROOF OF TRUST · INTERACTIVE PROTOTYPE</p>
+      <h1>Contextual authority for a roaming Fire TV Stick</h1>
+      <p class="intro">
+        Identity alone does not determine authority. PoT evaluates the actor,
+        device, context, mandate, proposed action, and required approval before
+        execution.
+      </p>
+      <p class="disclosure">
+        The phone/passkey interaction is simulated. Policy decisions,
+        request binding, replay protection, and receipt verification represent
+        implemented prototype behavior.
+      </p>
+    </header>
+
+    <section class="scenario" aria-labelledby="scenario-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">ACTIVE SCENARIO</p>
+          <h2 id="scenario-title">Roaming entertainment request</h2>
+        </div>
+        <span id="decision-badge" class="badge neutral">READY</span>
+      </div>
+
+      <dl class="request-grid">
+        <div>
+          <dt>Actor</dt>
+          <dd>Verified household adult</dd>
+        </div>
+        <div>
+          <dt>Device</dt>
+          <dd>Travel Fire TV Stick</dd>
+        </div>
+        <div>
+          <dt>Context</dt>
+          <dd>Roaming</dd>
+        </div>
+        <div>
+          <dt>Action</dt>
+          <dd>Rent digital content</dd>
+        </div>
+        <div>
+          <dt>Amount</dt>
+          <dd>CAD $9.99</dd>
+        </div>
+        <div>
+          <dt>Mandate</dt>
+          <dd>Household entertainment v1</dd>
+        </div>
+      </dl>
+
+      <div class="controls">
+        <button id="evaluate-button" class="button primary" type="button">
+          1. Evaluate request
+        </button>
+        <button id="approve-button" class="button secondary" type="button" disabled>
+          2. Simulate phone approval
+        </button>
+        <button id="replay-button" class="button danger" type="button" disabled>
+          3. Attempt replay
+        </button>
+        <button id="reset-button" class="button quiet" type="button">
+          Reset demonstration
+        </button>
+      </div>
+    </section>
+
+    <section class="flow" aria-labelledby="flow-title">
+      <p class="step-label">DECISION PATH</p>
+      <h2 id="flow-title">Authority remains explicit</h2>
+
+      <ol class="timeline">
+        <li id="flow-request">
+          <span>1</span>
+          <div>
+            <strong>Request submitted</strong>
+            <p>A verified user proposes an action from a roaming device.</p>
+          </div>
+        </li>
+        <li id="flow-deferred">
+          <span>2</span>
+          <div>
+            <strong>PoT evaluates context</strong>
+            <p>Roaming activity requires action-specific human approval.</p>
+          </div>
+        </li>
+        <li id="flow-approved">
+          <span>3</span>
+          <div>
+            <strong>Owner approval</strong>
+            <p>A simulated phone/passkey approval is bound to the request digest.</p>
+          </div>
+        </li>
+        <li id="flow-receipt">
+          <span>4</span>
+          <div>
+            <strong>Decision and receipt</strong>
+            <p>The exact approved request may proceed once; replay is blocked.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">TAMPER-EVIDENT EVIDENCE</p>
+          <h2 id="evidence-title">Decision receipt</h2>
+        </div>
+        <span id="integrity-badge" class="badge neutral">NOT ISSUED</span>
+      </div>
+
+      <pre id="receipt-output" aria-live="polite">Evaluate the request to begin.</pre>
+    </section>
+
+    <section class="principle">
+      <p class="step-label">GOVERNANCE PRINCIPLE</p>
+      <blockquote>
+        Authentication establishes who someone is. Proof of Trust determines
+        whether this action should be allowed, here and now.
+      </blockquote>
+    </section>
+
+    <footer>
+      <p>Proof of Trust · Contextual Authority</p>
+      <p>Prototype demonstration for the Amazon Alexa+ hackathon.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
