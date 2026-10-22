@@ -40,6 +40,34 @@ The same verified user may receive different decisions depending on the device, 
 
 Simulated context will be explicitly identified as simulated.
 
+## Roaming Fire TV Stick approval flow
+
+The current prototype demonstrates contextual authorization for a Fire TV Stick used outside its established household context.
+
+1. A verified household member submits a request from the roaming device.
+2. PoT detects the roaming context and returns `DEFERRED`.
+3. The owner provides simulated phone/passkey approval.
+4. The approval is bound to the exact request using its SHA-256 digest.
+5. The approved request returns `ALLOW`.
+6. Replayed, altered, or expired approvals return `BLOCK`.
+7. Each decision produces a tamper-evident receipt.
+
+The prototype currently simulates the phone/passkey interaction. It does not claim production integration with Amazon accounts, Alexa+, Fire TV, WebAuthn, or biometric systems.
+
+Automated tests verify:
+
+- The exact approved request is allowed.
+- A reused approval is rejected.
+- An approval cannot authorize an altered request.
+- An expired approval is rejected.
+- An altered decision receipt fails integrity verification.
+
+Run the complete demonstration with:
+
+```bash
+npm test
+```
+
 ## First milestone
 
 The first reproducible build will implement:
