@@ -68,18 +68,20 @@ Run the complete demonstration with:
 npm test
 ```
 
-## First milestone
+## Implemented milestone
 
-The first reproducible build will implement:
+The reproducible build implements:
 
 `request → mandate evaluation → decision → verifiable receipt`
 
-Initial tests will demonstrate:
+Automated tests demonstrate:
 
-1. An authorized household request returns "ALLOW".
-2. A roaming request requiring approval returns "DEFERRED".
-3. An out-of-mandate action returns "BLOCK".
+1. An authorized household request returns `ALLOW`.
+2. A roaming request requiring approval returns `DEFERRED`.
+3. An out-of-mandate action returns `BLOCK`.
 4. Altering a completed receipt causes verification to fail.
+5. Exact, single-use approval can authorize the bound roaming request.
+6. Replayed, altered, or expired approvals return `BLOCK`.
 
 ## Decision receipts
 
