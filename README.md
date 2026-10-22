@@ -2,6 +2,18 @@
 
 A governance layer for Alexa+ that evaluates identity, device context, mandates, and human authorization before consequential actions-and produces a tamper-evident receipt for every decision.
 
+## Live interactive prototype
+
+**[Launch the PoT Contextual Authority Demo](https://gxp53.github.io/pot-contextual-authority/demo/)**
+
+The demonstration evaluates a digital-content request from a roaming Fire TV Stick:
+
+`DEFERRED → human approval → ALLOW → replay attempt → BLOCK`
+
+It demonstrates request-bound, single-use approval, replay protection, and integrity-verifiable decision receipts.
+
+> **Prototype boundary:** The phone/passkey interaction is simulated. Policy decisions, request binding, replay protection, and receipt verification represent implemented prototype behavior.
+
 > **Status:** Active development for the Build, Ship, Shape: Amazon Developer Hackathon. Features described as planned are not yet represented as complete.
 
 ## The problem
